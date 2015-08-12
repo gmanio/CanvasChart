@@ -1,0 +1,15 @@
+			mouse{
+				position:absolute;
+				top:0;
+				right:0;
+				border:1px solid #ddd;
+			}
+			mouse dt{
+				display: inline-block
+			}
+			mouse dd{
+				display: inline-block
+			}
+			#ntsCanvas{
+				border:1px solid #ddd;
+			}
