@@ -21,8 +21,13 @@
 		<script src="./lib/Scatter/Model.js"></script>
 		<script src="./lib/Scatter/View.js"></script>
 		<script>
+			// Math.round((kg/Math.pow(tall,2))*10000)
 			var oScatterView = new nts.Chart.Scatter.View({
 					el : '#ntsCanvas'
+					data: [[170,60],[164,71]],
+					zIndex: function(kg,taller){
+						return Math.round((kg/Math.pow(taller,2))*10000)
+					}
 				});
 		</script>
 	</body>
