@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Scatter Canvas</title>
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<link rel="stylesheet" href="./style.css">
-	</head>
-	<body>
-		<mouse>
-			<dl>
-				<dt>X</dt>
-				<dd id='xPos'></dd>
-				<dt>Y</dt>
-				<dd id='yPos'></dd>
-			</dl>
-		</mouse>
-		<canvas id="ntsCanvas" width="500" height="500">Your browser doesn't support HTML5 Canvas.</canvas>
-		<script src="./lib/mousePos.js"></script>
-		<script src="./lib/Chart.js"></script>
-		<script src="./lib/Scatter/Model.js"></script>
-		<script src="./lib/Scatter/View.js"></script>
-		<script>
-			// Math.round((kg/Math.pow(tall,2))*10000)
-			var oScatterView = new nts.Chart.Scatter.View({
-					el : '#ntsCanvas'
-					data: [[170,60],[164,71]],
-					zIndex: function(kg,taller){
-						return Math.round((kg/Math.pow(taller,2))*10000)
-					}
-				});
-		</script>
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Scatter Canvas</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<mouse>
+		<dl>
+			<dt>X</dt>
+			<dd id='xPos'></dd>
+			<dt>Y</dt>
+			<dd id='yPos'></dd>
+		</dl>
+	</mouse>
+
+	<canvas id="ntsCanvas" width="800" height="500" dir="ltr">Your browser doesn't support HTML5 Canvas.</canvas>
+
+	<script src="./lib/mousePos.js"></script>
+	<script src="./lib/Chart.js"></script>
+	<script src="./lib/Scatter/Model.js"></script>
+	<script src="./lib/Scatter/View.js"></script>
+	<script>
+		// Math.round((kg/Math.pow(tall,2))*10000)
+		var oScatterView = new nts.Chart.Scatter.View({
+			el : '#ntsCanvas',
+			title: {
+				text: 'Height Versus Weight of 507 Individuals by Gender'
+			},
+			subtitle: {
+				text: 'Source: Heinz  2003'
+			},
+			xAxis: {
+				title: {
+					text: 'Height (cm)'
+				}
+			},
+			yAxis: {
+				title: {
+					text: 'Weight (kg)'
+				}
+			},
+			data: [[170,60],[164,71]],
+			zIndex: function(kg,taller){
+				return Math.round((kg/Math.pow(taller,2))*10000)
+			}
+		})
+	</script>
+</body>
 
 </html>

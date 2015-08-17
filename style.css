@@ -1,15 +1,19 @@
-			mouse{
-				position:absolute;
-				top:0;
-				right:0;
-				border:1px solid #ddd;
-			}
-			mouse dt{
-				display: inline-block
-			}
-			mouse dd{
-				display: inline-block
-			}
-			#ntsCanvas{
-				border:1px solid #ddd;
-			}
+body{margin:0;padding:0}
+canvas{
+	text-align: center
+}
+mouse{
+	position:absolute;
+	top:0;
+	right:0;
+	border:1px solid #ddd;
+}
+mouse dt{
+	display: inline-block
+}
+mouse dd{
+	display: inline-block
+}
+#ntsCanvas{
+	border:1px solid #ddd;
+}
